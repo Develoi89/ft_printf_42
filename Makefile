@@ -1,6 +1,7 @@
 NAME	=	libftprintf.a
 SRC		=	ft_printf.c \
-			src/ft_putchar.c 
+			src/ft_putchar.c \
+			src/ft_putstr.c
 
 OBJ		= $(SRC:%.c=%.o)
 CFLAGS	= -Wall -Wextra -Werror
