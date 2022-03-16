@@ -6,7 +6,7 @@
 /*   By: ealonso- <ealonso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:34:38 by ealonso-          #+#    #+#             */
-/*   Updated: 2022/03/16 18:54:34 by ealonso-         ###   ########.fr       */
+/*   Updated: 2022/03/16 19:12:00 by ealonso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ int	ft_putpost(unsigned long long ptr)
 	len = 0;
 	len += ft_printf("0x");
 	if (ptr == 0)
+	{
 		write(1, "0", 1);
+		len++;
+	}
 	else
 		len += ft_printpost(ptr);
 	return (len);

@@ -6,7 +6,7 @@
 /*   By: ealonso- <ealonso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:01:57 by ealonso-          #+#    #+#             */
-/*   Updated: 2022/03/16 18:57:32 by ealonso-         ###   ########.fr       */
+/*   Updated: 2022/03/16 19:10:06 by ealonso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_putstr(char	*s)
 {
 	int	i;
 
+	if (!s)
+		return (ft_putstr("(null)"));
 	i = 0;
 	while (s[i] != '\0')
 	{
