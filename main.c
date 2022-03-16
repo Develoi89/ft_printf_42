@@ -6,7 +6,7 @@
 /*   By: ealonso- <ealonso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:10:46 by ealonso-          #+#    #+#             */
-/*   Updated: 2022/03/16 16:06:15 by ealonso-         ###   ########.fr       */
+/*   Updated: 2022/03/16 17:56:50 by ealonso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int	main(void)
 	nb = ft_printf("prueba de i y s:%i%s\n", nb, s);
 	nb = ft_printf("prueba de u:%u\n", u);
 	nb = ft_printf("prueba de nb de u:%d\n", nb);
+	nb = ft_printf("prueba de nb de x:%x\n", u);
 	return (0);
 }
