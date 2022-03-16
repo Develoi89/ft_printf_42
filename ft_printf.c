@@ -6,7 +6,7 @@
 /*   By: ealonso- <ealonso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 16:59:29 by ealonso-          #+#    #+#             */
-/*   Updated: 2022/03/16 17:58:27 by ealonso-         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:46:52 by ealonso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_options(const char *input, va_list arg, int i)
 		len += ft_putchar(va_arg(arg, int));
 	if (input[i] == 's')
 		len += ft_putstr(va_arg(arg, char *));
-	// if (input[i] == 'p')
-	// 	len += ft_putpost(va_arg(arg, unsigned long long));
+	if (input[i] == 'p')
+		len += ft_putpost(va_arg(arg, unsigned long long));
 	if (input[i] == 'd')
 		len += ft_putdoble(va_arg(arg, int));
 	if (input[i] == 'i')
@@ -31,10 +31,13 @@ int	ft_options(const char *input, va_list arg, int i)
 		len += ft_putposnbr(va_arg(arg, unsigned int));
 	if (input[i] == 'x')
 		len += ft_puthex(va_arg(arg, unsigned int));
-	// if (input[i] == 'X')
-	// 	len += ft_putuphex(va_arg(arg, int));
-	// if (input[i] == '%')
-	// 	len += ft_putperc(va_arg(arg, char));
+	if (input[i] == 'X')
+		len += ft_putuphex(va_arg(arg, int));
+	if (input[i] == '%')
+	{
+		write(1, "%", 1);
+		len++;
+	}
 	return (len);
 }
 

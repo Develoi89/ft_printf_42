@@ -6,7 +6,7 @@
 /*   By: ealonso- <ealonso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:25:32 by ealonso-          #+#    #+#             */
-/*   Updated: 2022/03/16 15:37:56 by ealonso-         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:59:30 by ealonso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int	ft_putdoble(int i)
 
 	nb = ft_itoa(i);
 	len = ft_putstr(nb);
+	free (nb);
 	return (len);
 }

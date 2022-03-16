@@ -4,6 +4,8 @@ SRC		=	ft_printf.c \
 			src/ft_putstr.c \
 			src/ft_putdoble.c \
 			src/ft_puthex.c \
+			src/ft_putuphex.c \
+			src/ft_putpost.c \
 			src/ft_putposnbr.c
 
 OBJ		= $(SRC:%.c=%.o)

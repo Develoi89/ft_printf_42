@@ -1,26 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putpost.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ealonso- <ealonso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 15:01:57 by ealonso-          #+#    #+#             */
-/*   Updated: 2022/03/16 18:57:32 by ealonso-         ###   ########.fr       */
+/*   Created: 2022/03/16 18:34:38 by ealonso-          #+#    #+#             */
+/*   Updated: 2022/03/16 18:54:34 by ealonso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char	*s)
+int	ft_printpost(unsigned long long ptr)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	while (s[i] != '\0')
+	len = 0;
+	if (ptr > 15)
 	{
-		write(1, &s[i], 1);
-		i++;
+		len += ft_printpost(ptr / 16);
+		len += ft_printpost(ptr % 16);
 	}
-	return (i);
+	else if (ptr > 9)
+		len += ft_putchar(ptr + 87);
+	else
+		len += ft_putchar(ptr + 48);
+	return (len);
+}
+
+int	ft_putpost(unsigned long long ptr)
+{
+	int	len;
+
+	len = 0;
+	len += ft_printf("0x");
+	if (ptr == 0)
+		write(1, "0", 1);
+	else
+		len += ft_printpost(ptr);
+	return (len);
 }

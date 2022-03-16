@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putuphex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ealonso- <ealonso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 15:01:57 by ealonso-          #+#    #+#             */
-/*   Updated: 2022/03/16 18:57:32 by ealonso-         ###   ########.fr       */
+/*   Created: 2022/03/16 18:03:07 by ealonso-          #+#    #+#             */
+/*   Updated: 2022/03/16 18:22:03 by ealonso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char	*s)
+int	ft_putuphex(unsigned int i)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	while (s[i] != '\0')
+	len = 0;
+	if (i > 15)
 	{
-		write(1, &s[i], 1);
-		i++;
+		len += ft_putuphex(i / 16);
+		len += ft_putuphex(i % 16);
 	}
-	return (i);
+	else if (i > 9)
+		len += ft_putchar(i - 10 + 'A');
+	else
+		len += ft_putchar(i + 48);
+	return (len);
 }
