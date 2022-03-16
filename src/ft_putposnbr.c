@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putposnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ealonso- <ealonso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 15:10:46 by ealonso-          #+#    #+#             */
-/*   Updated: 2022/03/16 16:06:15 by ealonso-         ###   ########.fr       */
+/*   Created: 2022/03/16 15:53:44 by ealonso-          #+#    #+#             */
+/*   Updated: 2022/03/16 16:11:06 by ealonso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src/ft_printf.h"
+#include "ft_printf.h"
 
-int	main(void)
+int	ft_putposnbr(unsigned int i)
 {
-	int				nb;
-	char			c;
-	char			*s;
-	unsigned int	u;
+	int	len;
 
-	s = "hello world";
-	c = 'z';
-	u = 1234;
-	nb = ft_printf("prueba de c:%c\n", c);
-	nb = ft_printf("prueba de s:%s\n", s);
-	nb = ft_printf("prueba de d:%d\n", nb);
-	nb = ft_printf("prueba de i y s:%i%s\n", nb, s);
-	nb = ft_printf("prueba de u:%u\n", u);
-	nb = ft_printf("prueba de nb de u:%d\n", nb);
-	return (0);
+	len = 0;
+	if (i > 9)
+	{
+		len += ft_putposnbr(i / 10);
+		len += ft_putposnbr(i % 10);
+	}
+	else
+		len += ft_putchar(i + 48);
+	return (len);
 }

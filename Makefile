@@ -1,7 +1,9 @@
 NAME	=	libftprintf.a
 SRC		=	ft_printf.c \
 			src/ft_putchar.c \
-			src/ft_putstr.c
+			src/ft_putstr.c \
+			src/ft_putdoble.c \
+			src/ft_putposnbr.c
 
 OBJ		= $(SRC:%.c=%.o)
 CFLAGS	= -Wall -Wextra -Werror
@@ -29,5 +31,5 @@ re: fclean all
 
 .PHONY : prove
 prove:
-	CC $(SRC) main.c && ./a.out
+	CC $(SRC) main.c libft/*.c && ./a.out
 	 	

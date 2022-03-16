@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putdoble.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ealonso- <ealonso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 15:10:46 by ealonso-          #+#    #+#             */
-/*   Updated: 2022/03/16 16:06:15 by ealonso-         ###   ########.fr       */
+/*   Created: 2022/03/16 15:25:32 by ealonso-          #+#    #+#             */
+/*   Updated: 2022/03/16 15:37:56 by ealonso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src/ft_printf.h"
+#include "ft_printf.h"
+#include "../libft/libft.h"
 
-int	main(void)
+int	ft_putdoble(int i)
 {
-	int				nb;
-	char			c;
-	char			*s;
-	unsigned int	u;
+	char	*nb;
+	int		len;
 
-	s = "hello world";
-	c = 'z';
-	u = 1234;
-	nb = ft_printf("prueba de c:%c\n", c);
-	nb = ft_printf("prueba de s:%s\n", s);
-	nb = ft_printf("prueba de d:%d\n", nb);
-	nb = ft_printf("prueba de i y s:%i%s\n", nb, s);
-	nb = ft_printf("prueba de u:%u\n", u);
-	nb = ft_printf("prueba de nb de u:%d\n", nb);
-	return (0);
+	nb = ft_itoa(i);
+	len = ft_putstr(nb);
+	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: ealonso- <ealonso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:02:12 by ealonso-          #+#    #+#             */
-/*   Updated: 2022/03/16 15:16:36 by ealonso-         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:06:53 by ealonso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,7 @@
 int	ft_printf(const char *input, ...);
 int	ft_putchar(int c);
 int	ft_putstr(char *s);
+int	ft_putdoble(int i);
+int	ft_putposnbr(unsigned int i);
 
 #endif /* LIB_H */
